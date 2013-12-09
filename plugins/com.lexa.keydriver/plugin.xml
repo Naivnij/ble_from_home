@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.lexa.keydriver" version="0.1.1">
+    <name>KeyDriver</name>
+    <description>Media key driver for Cordova</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,keydriver</keywords>
+    <js-module src="www/keydriver.js" name="KeyDriver">
+        <clobbers target="KeyDriver" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="KeyDriver" >
+                <param name="android-package" value="com.lexa.keydriver.KeyDriver"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/KeyDriver.java" target-dir="src/com/lexa/keydriver" />
+    </platform>
+</plugin>
